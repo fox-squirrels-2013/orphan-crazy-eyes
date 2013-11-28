@@ -42,7 +42,6 @@ test:
   encoding: unicode
   database: orphan-crazy-eyes_test
   pool: 5
- 
 
 # production:
 #   adapter: postgresql
