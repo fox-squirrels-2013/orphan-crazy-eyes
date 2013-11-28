@@ -5,9 +5,9 @@ class OauthController < ApplicationController
   end
 
   def callback
-    response = Instagram.get_access_token(params[:code], :redirect_uri => CALLBACK_URL)
-    session[:access_token] = response.access_token
-    redirect "/feed"
+    session[:access_token] = params[:code]
+    p "session accesst token!!!!!!!!!!! #{session[:access_token]}"
+    # redirect "oauth/feed"
   end
 
   def feed
