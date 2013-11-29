@@ -11,10 +11,4 @@ class UsersController <ApplicationController
     redirect_to instagram_path(current_user)
   end
 
-  protected
-
-  def auth_hash
-    request.env['omniauth.auth']
-  end
-
 end

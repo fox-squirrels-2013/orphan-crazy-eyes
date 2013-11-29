@@ -3,7 +3,7 @@ OrphanCrazyEyes::Application.routes.draw do
 
   resources :users, only: [:index, :create, :show]
 
-  resources :instagrams, only: [:show]
+  resources :instagram, only: [:show]
 
   resources :sessions, only: [:show]
 

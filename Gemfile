@@ -10,7 +10,12 @@ gem 'instagram'
 gem 'omniauth'
 gem 'omniauth-instagram'
 gem 'dotenv-rails'
-gem 'debugger'
+
+group :test, :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem 'debugger'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
