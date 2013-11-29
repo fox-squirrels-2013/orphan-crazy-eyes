@@ -1,9 +1,11 @@
 <div class="container">
 
   <div class="left-container">
+    <ul class="instagram-pictures">
     <% @instagram.each do |instagram| %>
-    <%= image_tag instagram.images.low_resolution.url, class: "instagram" %>
+    <li><%= image_tag instagram.images.thumbnail.url, class: "instagram-draggable", id: instagram.id %></li>
     <% end %>
+  </ul>
   </div>
 
   <div class="right-container">

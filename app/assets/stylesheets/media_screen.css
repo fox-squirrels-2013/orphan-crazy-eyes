@@ -3,7 +3,7 @@
   body {
     text-align: center;
     margin: 5px;
-    background-color: rgba(126,126,126,.3);
+    background-color: rgba(226,226,126,.3);
   }
 
   header {
@@ -48,10 +48,10 @@
     border-radius: 1em;
   }
 
-  .instagram {
+  .instagram-draggable {
     border-radius: 1em;
     text-align: center;
-    width: 150px;
+    max-width: 50%;
   }
 
 }

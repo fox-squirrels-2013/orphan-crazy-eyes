@@ -20,6 +20,16 @@ a:hover {
   color: rgba(100,190,50,1);
 }
 
+ul {
+  list-style: none;
+  vertical-align: baseline;
+  display: inline;
+}
+
+li {
+  display: inline;
+}
+
 .container {
   width: 85%;
   height: 100px;
@@ -46,7 +56,7 @@ a:hover {
   border-radius: 1em;
 }
 
-.instagram {
+.instagram-draggable {
   border-radius: 1em;
   text-align: center;
 }
