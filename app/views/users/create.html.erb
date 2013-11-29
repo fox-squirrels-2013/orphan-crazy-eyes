@@ -1,8 +1,12 @@
-<div class="left-container">
-  <% @instagram.each do |instagram| %>
-    <%= image_tag instagram.images.low_resolution.url, class: "instagram" %>
-  <% end %>
-</div>
+<div class="container">
 
-<div class="right-container">
+  <div class="left-container">
+    <% @instagram.each do |instagram| %>
+    <%= image_tag instagram.images.low_resolution.url, class: "instagram" %>
+    <% end %>
+  </div>
+
+  <div class="right-container">
+  </div>
+
 </div>
