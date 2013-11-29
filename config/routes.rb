@@ -1,7 +1,7 @@
 OrphanCrazyEyes::Application.routes.draw do
   root :to => 'users#index'
 
-  resources :users, only: [:index, :create]
+  resources :users, only: [:index, :create, :show]
 
   get '/auth/instagram/callback', to: 'users#create'
 

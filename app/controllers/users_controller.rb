@@ -7,8 +7,12 @@ class UsersController <ApplicationController
 
   def create
     @access_token = auth_hash.credentials.token
-    @uid = auth_hash.uid
-    @instagram = Instagram.user_recent_media("#{@uid}")
+    session[:uid] = auth_hash.uid
+    redirect_to user_path(current_user)
+  end
+
+  def show
+    @instagram = Instagram.user_recent_media(current_user)
   end
 
   protected
