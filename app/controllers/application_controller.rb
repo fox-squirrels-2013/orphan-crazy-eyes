@@ -4,4 +4,11 @@ class ApplicationController < ActionController::Base
   def current_user
     session[:uid]
   end
+
+  protected
+
+  def auth_hash
+    request.env['omniauth.auth']
+  end
+
 end
