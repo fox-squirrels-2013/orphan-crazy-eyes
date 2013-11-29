@@ -6,6 +6,10 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'instagram'
+gem 'omniauth'
+
+gem 'dotenv-rails', :groups => [:development, :test]
 
 
 # Gems used only for assets and not required

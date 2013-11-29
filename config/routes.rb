@@ -1,4 +1,12 @@
 OrphanCrazyEyes::Application.routes.draw do
+  root to: "users#index"
+  resources :users
+
+  get "/oauth/connect"
+  get "/oauth/callback"
+  post "/oauth/callback"
+  get '/auth/:provider/callback', to: 'sessions#create'
+  get "/oauth/feed"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
