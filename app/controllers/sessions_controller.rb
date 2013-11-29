@@ -1,7 +1,8 @@
 class SessionsController <ApplicationController
 
   def create
-    session[:uid] = User.find_by(:uid)
+    @user = User.find(:uid)
+    session[:uid] = @user.uid
   end
 
   def destroy

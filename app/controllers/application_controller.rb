@@ -2,7 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def current_user
-    session[:uid]
+    @user ||= User.find(:uid)
+    session[:uid] = @user.uid
   end
 
   protected
