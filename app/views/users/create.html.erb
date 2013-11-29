@@ -1,0 +1,7 @@
+yay!
+
+<% @instagram.each do |instagram| %>
+
+  <%= image_tag instagram.images.standard_resolution.url %>
+
+<% end %>
