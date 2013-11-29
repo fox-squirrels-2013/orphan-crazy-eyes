@@ -10,6 +10,7 @@ gem 'instagram'
 gem 'omniauth'
 gem 'omniauth-instagram'
 gem 'dotenv-rails'
+gem 'debugger'
 
 # Gems used only for assets and not required
 # in production environments by default.
