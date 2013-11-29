@@ -1,24 +1,22 @@
 class OauthController < ApplicationController
   def connect
-    # CALLBACK_URL = "http://localhost:3000/oauth/callback"
-    redirect_to Instagram.authorize_url(:redirect_uri => "http://localhost:3000/oauth/callback")
+    redirect_to Instagram.authorize_url(:redirect_uri => ENV['CALLBACK_URL'])
   end
 
   def callback
-    session[:access_token] = params[:code]
-    p "session accesst token!!!!!!!!!!! #{session[:access_token]}"
-    # redirect "oauth/feed"
+    response = Instagram.get_access_token(params[:code], :redirect_uri => ENV['CALLBACK_URL'])
+    session[:access_token] = response.access_token
+    p "session[:access_token] = #{session[:access_token]} !!!!!!!!!!!!!!!!"
+    redirect_to "http://localhost:3000/oauth/feed"
   end
 
   def feed
     client = Instagram.client(:access_token => session[:access_token])
     user = client.user
-
-    html = "<h1>#{user.username}'s recent photos</h1>"
-    for media_item in client.user_recent_media
-      html << "<img src='#{media_item.images.thumbnail.url}'>"
-    end
-    html
+    p "client = #{client}"
+    p "user = #{user}"
+    media_feed = Instagram.user_media_feed
+    # Instagram.user_recent_media(777)
   end
 
 end

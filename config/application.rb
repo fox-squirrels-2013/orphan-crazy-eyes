@@ -8,11 +8,6 @@ require "active_resource/railtie"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
-CLIENT_ID = "fa61a189ff4c4c86aa7f7297999c765a"
-CLIENT_SECRET = "0054e83a656f4235b2b83164d76bc741"
-CALLBACK_URL = "http://localhost:3000/session/callback"
-REDIRECT = "http://localhost:3000/session/callback"
-
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
   Bundler.require(*Rails.groups(:assets => %w(development test)))
