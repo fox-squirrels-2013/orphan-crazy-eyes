@@ -6,11 +6,9 @@ class UsersController <ApplicationController
   end
 
   def create
-    p "* " * 50
-    @cred = auth_hash.credentials.token
-    @instagram = Instagram.user_recent_media("16676245")
-    # debugger
-    # render :create
+    @access_token = auth_hash.credentials.token
+    @uid = auth_hash.uid
+    @instagram = Instagram.user_recent_media("#{@uid}")
   end
 
   protected
