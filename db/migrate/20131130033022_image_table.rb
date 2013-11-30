@@ -4,7 +4,7 @@ class ImageTable < ActiveRecord::Migration
       t.string :image_url
       t.integer :instagram_id
       t.belongs_to :user
-      t.belongs_to :vote
+      t.has_many :votes
 
       t.timestamps
     end

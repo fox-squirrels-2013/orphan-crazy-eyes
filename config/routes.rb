@@ -5,6 +5,8 @@ OrphanCrazyEyes::Application.routes.draw do
 
   resources :instagram, only: [:show]
 
+  resources :votes, only: [:create]
+
   get '/auth/instagram/callback', to: 'users#create'
 
   # The priority is based upon order of creation:

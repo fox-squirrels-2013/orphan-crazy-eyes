@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131130034608) do
+ActiveRecord::Schema.define(:version => 20131130041822) do
 
   create_table "images", :force => true do |t|
     t.string   "image_url"
     t.integer  "instagram_id"
     t.integer  "user_id"
-    t.integer  "vote_id"
+    t.integer  "count"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(:version => 20131130034608) do
   create_table "votes", :force => true do |t|
     t.integer  "image_id"
     t.integer  "user_id"
-    t.integer  "count"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

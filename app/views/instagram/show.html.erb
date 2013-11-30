@@ -2,9 +2,9 @@
 
   <div class="left-container">
     <ul class="instagram-pictures">
-
+      ALL the PICTURES
       <% @tag.each do |tag| %>
-        <li><%= image_tag tag.images.thumbnail.url, class: "instagram-draggable", id: tag.id %></li>
+        <li><%= image_tag tag.images.thumbnail.url, class: "instagram-draggable", id: tag.id %><button class="vote-button">vote</button></li>
       <% end %>
 
     </ul>
@@ -12,7 +12,7 @@
 
   <div class="right-container">
     <ul class="instagram-pictures">
-
+      YOUR pictures
       <% @instagram.each do |instagram| %>
         <% if instagram.tags.grep(/collect_a_matron/) != [] %>
         <li><%= image_tag instagram.images.thumbnail.url, class: "instagram-draggable", id: instagram.id %></li>
