@@ -1,0 +1,8 @@
+<header>
+  #collect_a_matron
+  <% if current_user %>
+    <%= link_to "logout", sessions_path, :method => :delete %>
+  <% else %>
+    <%= link_to 'connect to instagram!', auth_instagram_path %>
+  <% end %>
+</header>

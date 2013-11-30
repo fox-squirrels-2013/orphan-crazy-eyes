@@ -1,13 +1,6 @@
 class SessionsController <ApplicationController
-
-  # not being used right now
-  def create
-    @user = User.find(:uid)
-    session[:uid] = @user.uid
-  end
-
   def destroy
     reset_session
+    redirect_to root_path
   end
-
 end
