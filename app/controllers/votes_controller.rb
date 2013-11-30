@@ -5,8 +5,9 @@ class VotesController <ApplicationController
     p "* " * 55
     p @user
     p params
-    # @image ||= Image.create(instagram_id: )
-    @vote = Vote.create(:user_id => @user.id, :image_id => :instagram_id)
+    debugger
+    @image = Image.create :user_id => @user.id, :instagram_id => params["instagram_id"], :image_url => params["image_url"]
+    @vote = Vote.create(:user_id => @user.id, :image_id => @image.id)
     redirect_to instagram_path(current_user)
   end
 
