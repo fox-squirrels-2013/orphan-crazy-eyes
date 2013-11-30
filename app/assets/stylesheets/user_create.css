@@ -12,6 +12,15 @@ header {
   font-family: monospace;
 }
 
+h3 {
+  text-align: center;
+  font-size: 14px;
+}
+
+p {
+  display: inline;
+}
+
 a {
   text-decoration: none;
   color: teal;
@@ -29,32 +38,36 @@ ul {
 
 li {
   display: inline;
+  padding: 0 14px 0;
 }
 
 .container {
+  /*position: relative;*/
   width: 85%;
-  height: 100px;
+  height: 900px;
   margin: auto;
   padding: 10px;
   background-color: rgba(10,110,280,.5);
 }
 
-.left-container {
+.all-the-pictures {
   /*position: absolute;*/
-  width: 40%;
-  background-color: rgba(100,110,80,.7);
+  text-align: center;
+  width: 60%;
+  background-color: rgba(10,110,180,.7);
   border-radius: 1em;
-  height: 100px;
-  float: left;
+  height: 100%;
   min-width: 400px;
 }
 
-.right-container {
+.your-pictures {
   /*position: absolute;*/
-  margin-left: 45%;
-  height: 100px;
-  background-color: rgba(280,270,200,.7);
+  text-align: center;
+  width: 60%;
+  background-color: rgba(100,210,80,.7);
   border-radius: 1em;
+  height: 100%;
+  min-width: 400px;
 }
 
 .instagram-draggable {
