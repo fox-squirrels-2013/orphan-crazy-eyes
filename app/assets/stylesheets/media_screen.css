@@ -27,7 +27,7 @@
     height: 100px;
     margin: auto;
     padding: 10px;
-    background-color: rgba(10,110,280,.5);
+    background-color: rgba(10,110,80,.5);
   }
 
   .all-the-pictures {
@@ -44,7 +44,7 @@
     /*position: absolute;*/
     margin-left: 45%;
     height: 100px;
-    background-color: rgba(280,270,200,.7);
+    background-color: rgba(80,270,200,.7);
     border-radius: 1em;
   }
 
