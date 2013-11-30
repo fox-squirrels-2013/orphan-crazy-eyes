@@ -2,9 +2,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def current_user
-    @user ||= User.find(:uid)
-    session[:uid] = @user.uid
+    @current_user ||= User.find session[:user_id] if session[:user_id]
   end
+
 
   protected
 
@@ -12,4 +12,5 @@ class ApplicationController < ActionController::Base
     request.env['omniauth.auth']
   end
 
+  helper_method :current_user
 end
