@@ -15,6 +15,7 @@ group :test, :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem 'debugger'
+  gem 'awesome_print'
 end
 
 # Gems used only for assets and not required
