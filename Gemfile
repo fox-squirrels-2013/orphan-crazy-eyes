@@ -16,6 +16,7 @@ group :test, :development do
   gem "binding_of_caller"
   gem 'debugger'
   gem 'awesome_print'
+  gem "rspec-rails"
 end
 
 # Gems used only for assets and not required

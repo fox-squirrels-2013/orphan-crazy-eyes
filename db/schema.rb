@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(:version => 20131130061017) do
     t.string   "image_url"
     t.string   "instagram_id"
     t.integer  "user_id"
-    t.integer  "count"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
