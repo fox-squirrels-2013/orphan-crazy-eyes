@@ -1,13 +1,15 @@
 OrphanCrazyEyes::Application.routes.draw do
-  root :to => 'instagram#show'
+  root :to => 'instagram#index'
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:create]
+  resource :sessions, only: [:destroy]
 
   resources :instagram, only: [:show]
 
   resources :votes, only: [:create]
 
   get '/auth/instagram/callback', to: 'users#create'
+  get '/auth/instagram'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
