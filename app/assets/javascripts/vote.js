@@ -4,12 +4,14 @@ $(document).ready(function(){
 $('button.vote-button').on('click', function(event) {
     event.preventDefault()
     console.log('wtf')
-    debugger
+    // console.log(@user)
+    // debugger
     var id = $(this).siblings().attr('id')
 
     $.ajax({
-      url: '/votes/' + id,
-      type: 'post'
+      url: '/votes',
+      type: 'post',
+      data: {image_id: id}
     })
     .done(function(data){
       console.log('data', data)
