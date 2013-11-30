@@ -1,0 +1,39 @@
+My User Info:
+===================================================
+
+
+
+
+Notes about using FotoMoto API:
+===================================================
+
+
+
+
+Code working from command line:
+===================================================
+
+
+Notes from Alexis' UX review & discussion w/Strand
+===================================================
+
+Class:: communicate with pwinty
+use the htttparty methods to make the pwinty API calls
+
+require it
+
+binding.pry => in index controller; like a debugger and stops execution until you exit the binding
+
+
+
+=> have people comment on the pictures with a link to the service that shows the pictures
+
+We're here to print cool pictures that you get every month!
++ add legaleeze terms
+
+=> sign up now in the cener of iphone app in big obvious symbol (buddha example)
+have it float above the list of pictures, always in the center of the page and opaque
+
+"untapped" web app -- look up old versions
+
+

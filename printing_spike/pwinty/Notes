@@ -1,0 +1,87 @@
+My User Info:
+===================================================
+
+MerchantId : b009d259-91a4-41cf-a496-63cb53426eeb
+API Key : 2ce950c6-ce2d-4ba3-a96d-995683629afc
+
+
+
+Notes about using pwinty API:
+===================================================
+
+1. post to /orders using curl to get an order ID
+2. post photos to the order
+3. get /verify the order
+4. post to set the order to AwaitingPayment
+5. redirect user to the checkout!!
+
+
+
+Code working from command line:
+===================================================
+
+URL parsing part:
+http://
+%3A => :
+%2F => /
+www.testserver.com
+aphoto.jpg
+
+1.
+curl https://sandbox.pwinty.com/v2/Orders \
+   -H "X-Pwinty-MerchantId: b009d259-91a4-41cf-a496-63cb53426eeb" \
+   -H "X-Pwinty-REST-API-Key: 2ce950c6-ce2d-4ba3-a96d-995683629afc" \
+   -d countryCode=GB \
+   -d qualityLevel=Pro \
+   -d useTracked=true \
+   -d recipientName=Mr%20Jones \
+   -d address1=The%20Hollies \
+   -d addressTownOrCity=Cardiff \
+   -d stateOrCounty=Glamorgan \
+   -d postalOrZipCode=CF11%201AX \
+   -d payment=InvoiceRecipient
+
+2.
+curl https://sandbox.pwinty.com/v2/Orders/7575/Photos \
+    -H "X-Pwinty-MerchantId: b009d259-91a4-41cf-a496-63cb53426eeb" \
+    -H "X-Pwinty-REST-API-Key: 2ce950c6-ce2d-4ba3-a96d-995683629afc" \
+    -d type=8x12 \
+    -d url=http%3A%2F%2Fdistilleryimage11.ak.instagram.com%2Fd33aafc8b55d11e2a66b22000a9f09de_7.jpg \
+    -d md5Hash="79054025255fb1a26e4bc422aef54eb4" \
+    -d copies=1 \
+    -d priceToUser=299 \
+    -d sizing=Crop
+
+3.
+curl https://sandbox.pwinty.com/v2/Orders/7575/SubmissionStatus \
+    -H "X-Pwinty-MerchantId: b009d259-91a4-41cf-a496-63cb53426eeb" \
+    -H "X-Pwinty-REST-API-Key: 2ce950c6-ce2d-4ba3-a96d-995683629afc"
+
+4.
+curl https://sandbox.pwinty.com/v2/Orders/7575/Status \
+    -H "X-Pwinty-MerchantId: b009d259-91a4-41cf-a496-63cb53426eeb" \
+    -H "X-Pwinty-REST-API-Key: 2ce950c6-ce2d-4ba3-a96d-995683629afc" -d status=Submitted
+
+Notes from Alexis' UX review & discussion w/Strand
+===================================================
+
+Class:: communicate with pwinty
+use the htttparty methods to make the pwinty API calls
+
+require it
+
+binding.pry => in index controller; like a debugger and stops execution until you exit the binding
+
+
+
+=> have people comment on the pictures with a link to the service that shows the pictures
+
+We're here to print cool pictures that you get every month!
++ add legaleeze terms
+
+=> sign up now in the cener of iphone app in big obvious symbol (buddha example)
+have it float above the list of pictures, always in the center of the page and opaque
+
+"untapped" web app -- look up old versions
+
+
