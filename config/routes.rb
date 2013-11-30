@@ -1,5 +1,5 @@
 OrphanCrazyEyes::Application.routes.draw do
-  root :to => 'instagram#show'
+  root :to => 'instagram#index'
 
   resources :users, only: [:new, :create]
 
