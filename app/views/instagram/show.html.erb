@@ -1,19 +1,19 @@
 <div class="container">
 
   <div class="left-container">
-    <ul class="instagram-pictures">
-    <% @instagram.each do |instagram| %>
-      <li><%= image_tag instagram.images.thumbnail.url, class: "instagram-draggable", id: instagram.id %></li>
-    <% end %>
-  </ul>
+
   </div>
 
   <div class="right-container">
-    <% @instagram.each do |instagram| %>
-      <% if instagram.tags.grep(/dinodraw/) != [] %>
-      <li><%= image_tag instagram.images.thumbnail.url, class: "instagram-draggable", id: instagram.id %></li>
-    <% end %>
-    <% end %>
+    <ul class="instagram-pictures">
+
+      <% @instagram.each do |instagram| %>
+        <% if instagram.tags.grep(/collect-a-matron/) != [] %>
+        <li><%= image_tag instagram.images.thumbnail.url, class: "instagram-draggable", id: instagram.id %></li>
+        <% end %>
+      <% end %>
+
+    </ul>
   </div>
 
 </div>
