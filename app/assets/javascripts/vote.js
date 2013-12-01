@@ -2,18 +2,26 @@ $(document).ready(function(){
 /////////////////////////////
 
   $('button.vote-button').on('click', function(event) {
-      event.preventDefault()
+        event.preventDefault()
+      var $thisButton = $(this)
       var id = $(this).siblings().attr('id')
       var imgSrc = $(this).siblings().attr('src')
+      var $votes = $(this).siblings().children()
+      var $newVoteCount = Number($votes.text())+1
       $.ajax({
         url: '/votes',
         type: 'post',
         data: {instagram_id: id, image_url: imgSrc}
       })
       .done(function(data){
-        console.log('still need to count up the votes, son')
+        $votes.text($newVoteCount)
+        $thisButton.attr('disabled', true)
       })
     })
+
+/////////////////////////////
+
+  $('button[disabled=false]').attr('disabled', false)
 
 /////////////////////////////
 

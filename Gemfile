@@ -17,6 +17,9 @@ group :test, :development do
   gem 'debugger'
   gem 'awesome_print'
   gem "rspec-rails"
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'simplecov', :require => false, :group => :test
 end
 
 # Gems used only for assets and not required
