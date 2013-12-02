@@ -1,20 +1,14 @@
 class UsersController <ApplicationController
-# order: index show new create edit update destroy
-
-  def index
-
-  end
+  before_filter :redirect_to_instagram, :only => [:create]
 
   def create
-    @access_token = auth_hash.credentials.token
-    @uid = auth_hash.uid
-    @instagram = Instagram.user_recent_media("#{@uid}")
+    user = User.find_or_create_by_auth auth_hash
+    if user.present?
+      login user
+      # populate_image_db
+      redirect_to instagram_path(current_user)
+    else
+      redirect_to root_path, :error => "we're sorry, try signing in again"
+    end
   end
-
-  protected
-
-  def auth_hash
-    request.env['omniauth.auth']
-  end
-
 end

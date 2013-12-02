@@ -1,0 +1,29 @@
+<div class="container">
+  <button class="filter-button">toggle</button>
+
+  <div class="all-the-pictures">
+    <ul class="instagram-pictures">
+      <h3>ALL the PICTURES</h3>
+      <% @instagram_array.each do |tag| %>
+        <li><%= image_tag tag.image_url, class: "instagram-draggable", id: tag.instagram_id %>
+            <button disabled="<%= tag.votable?(current_user.id) %>" class="vote-button">vote</button >
+          <p>votes = <span class="vote-count"><%= tag.vote_count %></span></p></li>
+      <% end %>
+
+    </ul>
+  </div>
+
+  <div class="your-pictures">
+    <ul class="instagram-pictures">
+      <h3>YOUR pictures</h3>
+      <% @instagram.each do |instagram| %>
+        <% if instagram.tags.grep(/collect_a_matron/) != [] %>
+        <li><%= image_tag instagram.images.thumbnail.url, class: "instagram-draggable", id: instagram.id %><p></p></li>
+        <% end %>
+      <% end %>
+
+    </ul>
+  </div>
+
+</div>
+

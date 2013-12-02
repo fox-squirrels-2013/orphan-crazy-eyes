@@ -1,0 +1,76 @@
+body {
+  position: relative;
+  text-align: center;
+  margin: 50px;
+  background-color: rgba(126,126,126,.3);
+}
+
+header {
+  position: relative;
+  text-align: center;
+  font-size: 30px;
+  font-family: monospace;
+}
+
+h3 {
+  text-align: center;
+  font-size: 14px;
+}
+
+p {
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+  color: teal;
+}
+
+a:hover {
+  color: rgba(100,190,50,1);
+}
+
+ul {
+  list-style: none;
+  vertical-align: baseline;
+  display: inline;
+}
+
+li {
+  display: inline;
+  padding: 0 14px 0;
+}
+
+.container {
+  /*position: relative;*/
+  width: 85%;
+  height: 900px;
+  margin: auto;
+  padding: 10px;
+  background-color: rgba(10,110,240,.5);
+}
+
+.all-the-pictures {
+  /*position: absolute;*/
+  text-align: center;
+  width: 60%;
+  background-color: rgba(10,110,180,.7);
+  border-radius: 1em;
+  height: 100%;
+  min-width: 400px;
+}
+
+.your-pictures {
+  /*position: absolute;*/
+  text-align: center;
+  width: 60%;
+  background-color: rgba(100,210,80,.7);
+  border-radius: 1em;
+  height: 100%;
+  min-width: 400px;
+}
+
+.instagram-draggable {
+  border-radius: 1em;
+  text-align: center;
+}
