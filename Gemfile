@@ -10,6 +10,7 @@ gem 'instagram'
 gem 'omniauth'
 gem 'omniauth-instagram'
 gem 'dotenv-rails'
+gem 'bootstrap-sass', '2.1'
 
 group :test, :development do
   gem "better_errors"

@@ -1,4 +1,4 @@
-@media only screen and (max-device-width: 480px) {
+/*@media only screen and (max-device-width: 480px) {
 
   body {
     text-align: center;
@@ -31,7 +31,6 @@
   }
 
   .all-the-pictures {
-    /*position: absolute;*/
     width: 40%;
     background-color: rgba(100,110,80,.7);
     border-radius: 1em;
@@ -41,7 +40,6 @@
   }
 
   .your-pictures {
-    /*position: absolute;*/
     margin-left: 45%;
     height: 100px;
     background-color: rgba(80,240,200,.7);
@@ -54,4 +52,4 @@
     max-width: 50%;
   }
 
-}
+}*/
