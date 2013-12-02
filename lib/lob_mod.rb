@@ -16,8 +16,8 @@ module Lob
   end
 
   # not currently accepting jpegs :(((((
-  def lob_object(image_url)
-    image = Image.where(image_url: image_url).first
+  def lob_object(pdf_image_url)
+    image = Image.where(pdf_image_url: pdf_image_url).first
     @lob.objects.create(
       name: image.instagram_id,
       file: image.image_url,

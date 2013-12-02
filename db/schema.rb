@@ -11,14 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131202035057) do
+ActiveRecord::Schema.define(:version => 20131202223230) do
 
   create_table "images", :force => true do |t|
     t.string   "image_url"
     t.string   "instagram_id"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
-    t.integer  "vote_count",   :default => 0
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.integer  "vote_count",    :default => 0
+    t.string   "pdf_image_url"
   end
 
   create_table "prints", :force => true do |t|

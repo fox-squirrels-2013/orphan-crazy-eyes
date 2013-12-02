@@ -28,11 +28,11 @@ namespace :db do
         end
         array_of_image_objects_user_wants_to_print
         image_objects_per_user = array_of_image_objects_user_wants_to_print - array_of_image_objects_not_to_print
-        image_urls = []
+        pdf_image_urls = []
         image_objects_per_user.each do |image_object|
-          image_urls << image_object.image_url
+          pdf_image_urls << image_object.pdf_image_url
         end
-        Print.create(p_user_id: num, p_image_urls: image_urls)
+        Print.create(p_user_id: num, p_image_urls: pdf_image_urls)
       end
 
     end
