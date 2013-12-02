@@ -1,8 +1,20 @@
-<header>
-  #collect_a_matron
-  <% if current_user %>
-    <%= link_to "logout", sessions_path, :method => :delete %>
-  <% else %>
-    <%= link_to 'connect to instagram!', auth_instagram_path %>
-  <% end %>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "Orphan Crazy Eyes", root_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Feed",    '#' %></li>
+          <li><%= link_to "Friends",    '#' %></li>
+          <li>
+            <% if current_user %>
+              <%= link_to "Logout", sessions_path, :method => :delete %>
+            <% else %>
+              <%= link_to 'Connect to Instagram!', auth_instagram_path %>
+            <% end %>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>
