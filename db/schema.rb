@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131201051957) do
+ActiveRecord::Schema.define(:version => 20131201232502) do
 
   create_table "images", :force => true do |t|
     t.string   "image_url"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(:version => 20131201051957) do
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
     t.integer  "vote_count",   :default => 0
+  end
+
+  create_table "prints", :force => true do |t|
+    t.integer  "p_user_id"
+    t.text     "p_image_urls"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "users", :force => true do |t|
