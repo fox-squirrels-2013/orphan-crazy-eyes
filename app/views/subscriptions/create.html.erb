@@ -1,0 +1,14 @@
+<%= form_for @subscription, url: {action: "create"} do |t| %>
+
+    <%= t.text_field hidden user id%>
+     <%= t.text_field :first_name %>
+     <%= t.text_field :last_name %>
+     <%= t.text_field :address_line1 %>
+     <%= t.text_field :address_line2 %>
+     <%= t.text_field :city %>
+     <%= t.text_field :state %>
+     <%= t.text_field :country %>
+     <%= t.text_field :zip %>
+     <%= t.submit "Create" %>
+
+<% end %>

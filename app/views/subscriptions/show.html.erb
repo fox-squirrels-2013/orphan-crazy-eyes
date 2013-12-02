@@ -1,0 +1,22 @@
+show
+<%= form_for @subscription, url: {action: subscriptions_path} do |t| %>
+       <%= hidden_field_tag :user_id, current_user.id %>
+       <%= t.label :first_name %>
+       <%= t.text_field :first_name %>
+       <%= t.label :last_name %>
+       <%= t.text_field :last_name %>
+       <%= t.label :address_line1 %>
+       <%= t.text_field :address_line1 %>
+       <%= t.label :address_line2 %>
+       <%= t.text_field :address_line2 %>
+       <%= t.label :city %>
+       <%= t.text_field :city %>
+       <%= t.label :state %>
+       <%= t.text_field :state %>
+       <%= t.label :country %>
+       <%= t.text_field :country %>
+       <%= t.label :zip %>
+       <%= t.text_field :zip %>
+       <%= t.submit "Create" %>
+
+<% end %>
