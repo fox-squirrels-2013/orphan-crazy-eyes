@@ -100,3 +100,21 @@ footer {
     }
   }
 }
+
+/* columns */
+/*.item { width: 25%; }*/
+
+/*#gutter-opt-demo2 .item {
+  margin-bottom: 10px;
+}*/
+
+.masonry .item {
+  width:  130px;
+  height: 130px;
+  float: left;
+  margin-bottom: 10px;
+  background: #D26;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 7px;
+}
