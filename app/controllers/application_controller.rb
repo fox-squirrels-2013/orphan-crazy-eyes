@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
           @instagram_array << @image
         else
           @image = Image.create :instagram_id => tag.id,
-                                :image_url => tag.images.thumbnail.url
+                                :image_url => tag.images.standard_resolution.url
           @instagram_array << @image
         end
       end
