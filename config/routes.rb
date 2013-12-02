@@ -8,7 +8,7 @@ OrphanCrazyEyes::Application.routes.draw do
 
   resources :votes, only: [:create]
 
-  resources :subscriptions, only: [:create, :show]
+  resources :subscriptions, only: [:create, :new]
 
   get '/auth/instagram/callback', to: 'users#create'
   get '/auth/instagram'
