@@ -63,17 +63,23 @@ namespace :db do
       zip: subscription.zip
     )
 ######### LOB - OBJECT #############
-# cloudimage = $img.pdf_image_url
-# p "*"*55
-#  p cloudimage
-# cloudimage["url"]
 
-#     image = Image.where(pdf_image_url: cloudimage["url"] ).first
-#       @lob.objects.create(
-#         name: image.instagram_id,
-#         file: image.image_url,
-#         setting_id: "500"
-#       )
+# sooooo..... this first 'if' works... we need to do more logic cause $img changes...
+#   idk, iterate or make sure it's not nil... something... but i'm tired.
+#   LATERZ
+if pdf_image_urls != []
+cloudimage = $img.pdf_image_url
+p "*"*55
+ p cloudimage
+cloudimage["url"]
+
+    $image = Image.where(pdf_image_url: cloudimage["url"] ).first
+      @lob.objects.create(
+        name: $image.instagram_id,
+        file: $image.image_url,
+        setting_id: "500"
+      )
+end
 # ########## USERS - LOB - OBJECT #############
 #     prints = Print.where(p_user_id: num)
 #       lob_objects = []
