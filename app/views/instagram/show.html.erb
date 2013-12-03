@@ -5,7 +5,9 @@
   <div class="js-masonry masonry" id="container" data-masonry-options='{ "columnWidth": 20 }'>
       <% @instagram_array.each do |tag| %>
         <div class="item">
-        <%= image_tag tag.image_url, id: tag.instagram_id %>
+          <div class="picture">
+            <%= image_tag tag.image_url, id: tag.instagram_id %>
+          </div>
           <button disabled="<%= tag.votable?(current_user.id) %>" class="vote-button">vote</button >
           <span>votes = <span class="vote-count"><%= tag.vote_count %></span></span>
         </div>

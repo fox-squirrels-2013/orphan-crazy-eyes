@@ -12,6 +12,8 @@ html {
 
 body {
   padding-top: 60px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 section {
@@ -122,7 +124,11 @@ footer {
   background: #D26;
   border: 2px solid #333;
   border-color: hsla(0, 0%, 0%, 0.5);
-  border-radius: 0px;
+  border-radius: 20px;
+}
+
+.picture {
+  border-radius: 20px;
 }
 
 #all-pix-title {
