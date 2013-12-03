@@ -3,6 +3,7 @@
   <button class="filter-button">toggle</button>
   <a href="/subscriptions/new" class="subscribe-button">subscribe</a>
 
+  <h3>ALL the PICTURES</h3>
   <div class="instagram-pictures container js-masonry all-the-pictures masonry item" id="container" data-masonry-options='{ "columnWidth": 102, "itemSelector": ".item" }'>
     <h3>ALL the PICTURES</h3>
     <% @instagram_array.each do |tag| %>
@@ -10,23 +11,23 @@
       <%= image_tag tag.image_url, class: "instagram-draggable", id: tag.instagram_id %><br>
       <button disabled="<%= tag.votable?(current_user.id) %>" class="vote-button">vote</button >
         <span>votes = <span class="vote-count"><%= tag.vote_count %></span></span>
+      </div>
+      <% end %>
     </div>
-    <% end %>
+
+    <div class="instagram-pictures container js-masonry your-pictures masonry item" id="container" data-masonry-options='{ "columnWidth": 102, "itemSelector": ".item" }'>
+      <h3>YOUR pictures</h3>
+      <ul class="instagram-pictures">
+        <% @instagram.each do |instagram| %>
+        <% if instagram.tags.grep(/collect_a_matron/) != [] %>
+        <li><%= image_tag instagram.images.thumbnail.url, class: "instagram-draggable", id: instagram.id %><p></p></li>
+        <% end %>
+        <% end %>
+
+      </ul>
+    </div>
+
   </div>
-
-  <div class="instagram-pictures container js-masonry your-pictures masonry item" id="container" data-masonry-options='{ "columnWidth": 102, "itemSelector": ".item" }'>
-    <h3>YOUR pictures</h3>
-    <ul class="instagram-pictures">
-      <% @instagram.each do |instagram| %>
-      <% if instagram.tags.grep(/collect_a_matron/) != [] %>
-      <li><%= image_tag instagram.images.thumbnail.url, class: "instagram-draggable", id: instagram.id %><p></p></li>
-      <% end %>
-      <% end %>
-
-    </ul>
-  </div>
-
-</div>
 
 
 
