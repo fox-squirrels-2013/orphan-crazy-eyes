@@ -1,24 +1,31 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header
+<div class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="nav-container">
       <%= link_to "#collect_a_matron", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <h3><%= "start collectin'" %></h3>
-          <% if current_user %>
-            <li><%= "yo, "+ current_user.nickname %></li>
-          <% end %>
-          <li><%= link_to "Feed",    '#' %></li>
-          <li><%= link_to "Friends",    '#' %></li>
-          <li>
+          <li class="top-nav">
             <% if current_user %>
-              <%= link_to "Logout", sessions_path, :method => :delete %>
-            <% else %>
-              <%= link_to 'Connect to Instagram!', auth_instagram_path %>
+            <span class="nickname"> <%= "Start Collectin'  " %> </span> <%= current_user.nickname %>
             <% end %>
           </li>
+          <li class="filter-button">Toggle</li>
+
+          <li><%= link_to "Subscribe", new_subscription_path, :method => :get %></li>
+          <li>
+            <% if current_user %>
+            <%= link_to "Logout", sessions_path, :method => :delete %>
+            <% else %>
+            <%= link_to 'Connect to Instagram!', auth_instagram_path %>
+            <% end %>
+          </li>
+          <!-- <li class="filter-button">Subscribe</li> -->
         </ul>
       </nav>
     </div>
   </div>
+</div>
+
+
 </header>
