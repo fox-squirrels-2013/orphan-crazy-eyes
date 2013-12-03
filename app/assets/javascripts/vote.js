@@ -25,13 +25,14 @@ $(document).ready(function(){
 
 /////////////////////////////
 
-    $('.your-pictures').hide()
-    $('.all-the-pictures').show()
+    $('div.your-pictures').hide()
+    $('div.all-the-pictures').show()
 
     $('button.filter-button').on('click', function(event) {
+      console.log("hello!!")
       event.preventDefault()
-      $('.your-pictures').toggle()
-      $('.all-the-pictures').toggle()
+      $('div.your-pictures').toggle()
+      $('div.all-the-pictures').toggle()
     })
 
 /////////////////////////////
