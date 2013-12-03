@@ -15,3 +15,9 @@ namespace :db do
 
   end
 end
+
+          # Prawn::Document.new(:page_size => [715, 1072.5]) do |pdf|
+
+    # if Date.today.day == 1
+
+    # end
