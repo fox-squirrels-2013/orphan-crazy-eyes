@@ -10,6 +10,9 @@ gem 'instagram'
 gem 'omniauth'
 gem 'omniauth-instagram'
 gem 'dotenv-rails'
+gem 'lob'
+gem "prawn", "~> 0.12.0"
+gem 'cloudinary'
 
 group :test, :development do
   gem "better_errors"

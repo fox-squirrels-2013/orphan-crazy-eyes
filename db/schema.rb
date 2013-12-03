@@ -11,14 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131201232502) do
+ActiveRecord::Schema.define(:version => 20131203005735) do
 
   create_table "images", :force => true do |t|
     t.string   "image_url"
     t.string   "instagram_id"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
-    t.integer  "vote_count",   :default => 0
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.integer  "vote_count",    :default => 0
+    t.text     "pdf_image_url"
   end
 
   create_table "prints", :force => true do |t|
@@ -28,12 +29,27 @@ ActiveRecord::Schema.define(:version => 20131201232502) do
     t.datetime "updated_at",   :null => false
   end
 
+  create_table "subscriptions", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address_line1"
+    t.string   "address_line2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "zip"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.integer  "uid"
     t.string   "access_token"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "nickname"
+    t.integer  "subscription_id"
   end
 
   create_table "votes", :force => true do |t|

@@ -5,7 +5,6 @@ class UsersController <ApplicationController
     user = User.find_or_create_by_auth auth_hash
     if user.present?
       login user
-      # populate_image_db
       redirect_to instagram_path(current_user)
     else
       redirect_to root_path, :error => "we're sorry, try signing in again"
