@@ -10,8 +10,18 @@ html {
   overflow-y: scroll;
 }
 
+.navbar {
+  background-color: yellow;
+}
+
+.navbar {
+  background-color: yellow;
+}
+
 body {
   padding-top: 60px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 section {
@@ -101,20 +111,24 @@ footer {
   }
 }
 
-/* columns */
-/*.item { width: 25%; }*/
 
-/*#gutter-opt-demo2 .item {
-  margin-bottom: 10px;
-}*/
+.container {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
 
 .masonry .item {
-  width:  130px;
-  height: 130px;
+  width:  150px;
+  height: 175px;
   float: left;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
   background: #D26;
-  border: 2px solid #333;
-  border-color: hsla(0, 0%, 0%, 0.5);
-  border-radius: 7px;
+  background-color: grey;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+
+.instagram-draggable {
 }

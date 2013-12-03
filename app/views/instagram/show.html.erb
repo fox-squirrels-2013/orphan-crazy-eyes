@@ -3,12 +3,14 @@
   <button class="filter-button">toggle</button>
 
   <h3>ALL the PICTURES</h3>
-  <div class="instagram-pictures container js-masonry all-the-pictures masonry item" id="container" data-masonry-options='{ "columnWidth": 310, "itemSelector": ".item" }'>
+  <div class="instagram-pictures container js-masonry all-the-pictures masonry item" id="container" data-masonry-options='{ "columnWidth": 102, "itemSelector": ".item" }'>
       <% @instagram_array.each do |tag| %>
         <div class="item">
-        <%= image_tag tag.image_url, class: "instagram-draggable", id: tag.instagram_id %><br>
-          <button disabled="<%= tag.votable?(current_user.id) %>" class="vote-button">vote</button >
-          <span>votes = <span class="vote-count"><%= tag.vote_count %></span></span>
+          <%= image_tag tag.image_url, class: "instagram-draggable", id: tag.instagram_id %><br>
+            <div class="">
+              <button disabled="<%= tag.votable?(current_user.id) %>" class="vote-button">vote</button >
+              <span>votes = <span class="vote-count"><%= tag.vote_count %></span></span>
+            </div>
         </div>
       <% end %>
   </div>
