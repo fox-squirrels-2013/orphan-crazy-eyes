@@ -28,9 +28,9 @@ $(document).ready(function(){
     $('div.your-pictures').hide()
     $('div.all-the-pictures').show()
 
-    $('button.filter-button').on('click', function(event) {
-      console.log("hello!!")
+    $('li.filter-button').on('click', function(event) {
       event.preventDefault()
+      // $('li.filter-button').text('all the pictures')
       $('div.your-pictures').toggle()
       $('div.all-the-pictures').toggle()
     })

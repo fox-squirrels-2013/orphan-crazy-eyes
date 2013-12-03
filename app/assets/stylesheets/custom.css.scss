@@ -63,7 +63,33 @@ p {
 
 /* header */
 
+span.nickname {
+  font-style: italic;
+}
 
+.filter-button {
+  background-color: transparent;
+  color: #999999;
+  display: block;
+  padding: 10px 15px 10px;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.top-nav {
+  background-color: transparent;
+  color: #999999;
+  display: block;
+  padding: 10px 15px 10px;
+
+}
+
+.navbar-inverse li > a:hover {
+  background-color: transparent;
+  color: white;
+}
 
 #logo {
   float: left;
@@ -73,6 +99,7 @@ p {
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
+  padding-left: 9px;
   font-weight: bold;
   line-height: 1;
   &:hover {
@@ -111,6 +138,7 @@ footer {
 .container {
   width: 100%;
   margin-bottom: 20px;
+  margin-top: 15px;
 }
 
 
