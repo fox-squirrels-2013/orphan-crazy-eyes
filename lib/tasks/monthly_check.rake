@@ -30,8 +30,8 @@ namespace :db do
         image_objects_per_user = array_of_image_objects_user_wants_to_print - array_of_image_objects_not_to_print
         pdf_image_urls = []
         image_objects_per_user.each do |image_object|
-          Prawn::Document.new(:page_size => [1800, 1200], :background => "#{Rails.root.to_s}/whiteBG.jpg") do |pdf|
-            pdf.image open(image_object.image_url)
+          Prawn::Document.new(:background => "#{Rails.root.to_s}/public/whiteBG.jpg") do |pdf|
+            pdf.image open("#{Rails.root.to_s}/public/whiteBG.jpg")
             pdf.render_file('#{image_object.instagram_id}.pdf')
             newpdf = File.open('#{image_object.instagram_id}.pdf')
             cloudpdf = Cloudinary::Uploader.upload(newpdf)
@@ -57,8 +57,8 @@ namespace :db do
         lob_objects = image_objects_per_user.map do |image_object|
           @lob.objects.create(
             name: image_object.instagram_id,
-            file: "http://res.cloudinary.com/dvm/image/upload/v1386101795/v9cg3aezfdjywlbw21ox.pdf",
-            # file: image_object.pdf_image_url,
+            # file: "http://res.cloudinary.com/dvm/image/upload/v1386101795/v9cg3aezfdjywlbw21ox.pdf",
+            file: image_object.pdf_image_url,
             setting_id: "500"
             )
         end

@@ -14,7 +14,18 @@ namespace :db do
         end
 
   end
+
 end
+
+
+Prawn::Document.new(:background => "#{Rails.root.to_s}/public/whiteBG.jpg") do |pdf|
+    pdf.image open("#{Rails.root.to_s}/public/whiteBG.jpg")
+    pdf.render_file('#{ballsflkjlj}.pdf')
+
+end
+
+
+
 
           # Prawn::Document.new(:page_size => [715, 1072.5]) do |pdf|
 
