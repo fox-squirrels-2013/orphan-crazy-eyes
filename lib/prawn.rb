@@ -6,9 +6,15 @@ module PrawnPDF
       pdf.render_file('#{instagram_id}.pdf')
       newpdf = File.open('#{instagram_id}.pdf')
       cloudpdf = Cloudinary::Uploader.upload(newpdf)
-      cloudpdf.save
+      Image.update_attributes(pdf_image_url: cloudpdf)
     end
   end
+
+
+
+
+
+
   # output: pdf
   def pdf_maker(jpg_url, instagram_id)
     Prawn::Document.new(:page_size => [715, 1072.5]) do |pdf|
