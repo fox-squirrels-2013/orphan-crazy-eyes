@@ -13,6 +13,7 @@ gem 'dotenv-rails'
 gem 'lob'
 gem "prawn", "~> 0.12.0"
 gem 'cloudinary'
+gem 'bootstrap-sass', '2.1'
 
 group :test, :development do
   gem "better_errors"
