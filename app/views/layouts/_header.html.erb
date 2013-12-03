@@ -1,11 +1,12 @@
 <header
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="nav-container">
       <%= link_to "#collect_a_matron", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <h3><%= "start collectin'" %></h3>
+          <li><%= "start collectin'" %></li>
+
           <% if current_user %>
           <li><%= "yo, "+ current_user.nickname %></li>
           <% end %>
@@ -21,26 +22,6 @@
         </ul>
       </nav>
     </div>
-  </div>
-</div>
-
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">#colfm</a>
-    </div>
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li><a href="#about">yo nickname</a></li>
-
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="../navbar/">toggle</a></li>
-        <li><a href="../navbar-static-top/">subscribe</a></li>
-        <li class="active"><a href="./">logout</a></li>
-      </ul>
-    </div><!--/.nav-collapse -->
   </div>
 </div>
 
