@@ -21,3 +21,10 @@ end
     # if Date.today.day == 1
 
     # end
+
+# http://res.cloudinary.com/dvm/image/upload/v1386098332/qdetwdwtvbvmuqu2yr0y.pdf
+
+
+# Prawn::Document.new(:page_size => [1800, 1200], :background => "#{Rails.root.to_s}/whiteBG.jpg") do |pdf|
+#     pdf.render_file('test4test.pdf')
+# end

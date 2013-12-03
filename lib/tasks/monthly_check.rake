@@ -30,7 +30,7 @@ namespace :db do
         image_objects_per_user = array_of_image_objects_user_wants_to_print - array_of_image_objects_not_to_print
         pdf_image_urls = []
         image_objects_per_user.each do |image_object|
-          Prawn::Document.new(:page_size => [1200, 1800]) do |pdf|
+          Prawn::Document.new(:page_size => [1800, 1200], :background => "#{Rails.root.to_s}/whiteBG.jpg") do |pdf|
             pdf.image open(image_object.image_url)
             pdf.render_file('#{image_object.instagram_id}.pdf')
             newpdf = File.open('#{image_object.instagram_id}.pdf')
@@ -43,7 +43,7 @@ namespace :db do
 
         print_job = Print.create(p_user_id: num, p_image_urls: pdf_image_urls)
         @lob = Lob()
-        subscription = Subscription.where(user_id: 28).first
+        subscription = Subscription.where(user_id: 1).first
         @lob_address = @lob.addresses.create(
           name: subscription.first_name,
           address_line1: subscription.address_line1,
@@ -57,16 +57,17 @@ namespace :db do
         lob_objects = image_objects_per_user.map do |image_object|
           @lob.objects.create(
             name: image_object.instagram_id,
-            file: image_object.image_url,
+            file: "http://res.cloudinary.com/dvm/image/upload/v1386101795/v9cg3aezfdjywlbw21ox.pdf",
+            # file: image_object.pdf_image_url,
             setting_id: "500"
             )
         end
 
-        array_of_lob_object_ids = lob_objects.map { |obj| obj[id] }
+        array_of_lob_object_ids = lob_objects.map { |obj| obj["id"] }
 
         @lob.jobs.create(
-          name: num + Date.today,
-          to: @lob_address[id],
+          name: "bah69",
+          to: @lob_address["id"],
           objects: array_of_lob_object_ids
           )
       end
