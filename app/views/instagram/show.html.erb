@@ -1,16 +1,18 @@
+
 <div class="container">
   <button class="filter-button">toggle</button>
 
-  <div class="all-the-pictures">
-    <ul class="instagram-pictures">
-      <h3>ALL the PICTURES</h3>
+  <h3>ALL the PICTURES</h3>
+  <div class="instagram-pictures container js-masonry all-the-pictures masonry item" id="container" data-masonry-options='{ "columnWidth": 102, "itemSelector": ".item" }'>
       <% @instagram_array.each do |tag| %>
-        <li><%= image_tag tag.image_url, class: "instagram-draggable", id: tag.instagram_id %>
-            <button disabled="<%= tag.votable?(current_user.id) %>" class="vote-button">vote</button >
-          <p>votes = <span class="vote-count"><%= tag.vote_count %></span></p></li>
+        <div class="item">
+          <%= image_tag tag.image_url, class: "instagram-draggable", id: tag.instagram_id %><br>
+            <div class="">
+              <button disabled="<%= tag.votable?(current_user.id) %>" class="vote-button">vote</button >
+              <span>votes = <span class="vote-count"><%= tag.vote_count %></span></span>
+            </div>
+        </div>
       <% end %>
-
-    </ul>
   </div>
 
   <div class="your-pictures">
@@ -26,4 +28,6 @@
   </div>
 
 </div>
+
+
 
