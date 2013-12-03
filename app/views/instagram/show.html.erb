@@ -8,10 +8,8 @@
       <% @instagram_array.each do |tag| %>
         <div class="item">
           <%= image_tag tag.image_url, class: "instagram-draggable", id: tag.instagram_id %><br>
-            <div class="">
               <button disabled="<%= tag.votable?(current_user.id) %>" class="vote-button">vote</button >
               <span>votes = <span class="vote-count"><%= tag.vote_count %></span></span>
-            </div>
         </div>
       <% end %>
   </div>

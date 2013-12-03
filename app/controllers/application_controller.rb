@@ -19,9 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def vote!
-
     @user = current_user
-    # debugger
     if Image.where(instagram_id: params["instagram_id"]).exists?
       @image = Image.where(instagram_id: params["instagram_id"]).first
     else
@@ -34,7 +32,6 @@ class ApplicationController < ActionController::Base
     @image.update_attributes :vote_count => @count
     @new_count = @image.vote_count
   end
-
 
   helper_method :current_user
 end
