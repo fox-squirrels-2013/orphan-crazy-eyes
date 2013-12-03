@@ -2,7 +2,7 @@ $(document).ready(function(){
 /////////////////////////////
 
   $('button.vote-button').on('click', function(event) {
-        event.preventDefault()
+      event.preventDefault()
       var $thisButton = $(this)
       var id = $(this).siblings().attr('id')
       var imgSrc = $(this).siblings().attr('src')
