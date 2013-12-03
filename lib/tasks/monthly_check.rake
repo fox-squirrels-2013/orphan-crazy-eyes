@@ -9,7 +9,7 @@ namespace :db do
       images = Image.all
       users = User.all
       votes = Vote.all
-      total_users = users.length + 1
+      total_users = users.length
 
       array_of_image_objects_not_to_print = []
 
@@ -21,6 +21,7 @@ namespace :db do
       end
 ### beginning of big loop
       total_users.times do |num|
+        num += 1
         array_of_image_objects_user_wants_to_print = []
         users_votes = Vote.where(user_id: num)
         users_votes.each do |vote|
@@ -38,21 +39,22 @@ namespace :db do
             newpdf = File.open('#{image_object.instagram_id}.pdf')
             cloudpdf = Cloudinary::Uploader.upload(newpdf)
             $img = Image.where(id: image_object.id).first
-            $img.update_attributes(pdf_image_url: cloudpdf)
+            $img.update_attributes(pdf_image_url: cloudpdf["url"])
             pdf_image_urls << $img.pdf_image_url
-            # p $img
-            # p "*"
-            # p $img.pdf_image_url
+            p $img
+            p "*"
+            p $img.pdf_image_url
+            p "*"
           end
 
 ########## PRAWN #############
         end
-        p "*"
-            p pdf_image_urls
+        p "*#******"
+        p pdf_image_urls
         Print.create(p_user_id: num, p_image_urls: pdf_image_urls)
 ########## LOB - ADDRESS #############
     @lob = Lob()
-    subscription = Subscription.where(user_id: 1).first
+    subscription = Subscription.where(user_id: 28).first
     @lob_address = @lob.addresses.create(
       name: subscription.first_name,
       address_line1: subscription.address_line1,
@@ -68,12 +70,8 @@ namespace :db do
 #   idk, iterate or make sure it's not nil... something... but i'm tired.
 #   LATERZ
 if pdf_image_urls != []
-cloudimage = $img.pdf_image_url
-p "*"*55
- p cloudimage
-cloudimage["url"]
 
-    $image = Image.where(pdf_image_url: cloudimage["url"] ).first
+    $image = Image.where(pdf_image_url: cloudimage ).first
       @lob.objects.create(
         name: $image.instagram_id,
         file: $image.image_url,
