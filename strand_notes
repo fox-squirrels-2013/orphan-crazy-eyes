@@ -1,0 +1,8 @@
+Create a model to store the data from the Instagram call
+  This model should have a text field to store call info
+    Serialize the data from IG
+  Has updated_at (just timestamps)
+  has a string field for tag
+
+If the tag exists update the DB unless the updated at is recent (a half hour?)
+else create a new thing
