@@ -16,7 +16,7 @@ gem 'cloudinary'
 gem 'bootstrap-sass', '2.1'
 
 group :test, :development do
-  gem "better_errors"
+  # gem "better_errors"
   gem "binding_of_caller"
   gem 'debugger'
   gem 'awesome_print'

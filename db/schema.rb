@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131203005735) do
+ActiveRecord::Schema.define(:version => 20131203193203) do
 
   create_table "images", :force => true do |t|
     t.string   "image_url"
@@ -46,10 +46,10 @@ ActiveRecord::Schema.define(:version => 20131203005735) do
   create_table "users", :force => true do |t|
     t.integer  "uid"
     t.string   "access_token"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "nickname"
-    t.integer  "subscription_id"
+    t.integer  "subscription_id", :default => 0
   end
 
   create_table "votes", :force => true do |t|
