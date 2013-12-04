@@ -28,24 +28,21 @@ $(document).ready(function(){
 // can this be refactored to use button and then style
 // button to blend in with the navbar
 
-    $('li.all-pics-li').on('click', function(event) {
+    $('li.all-pics').on('click', function(event) {
       event.preventDefault()
       $(this).toggleClass('hidden')
-      $('li.my-pics-li').toggleClass('hidden')
+      $('li.my-pics').toggleClass('hidden')
       $('div.your-pictures').toggleClass('hidden')
       $('div.all-the-pictures').toggleClass('hidden')
     })
 
-    $('li.my-pics-li').on('click', function(event) {
+    $('li.my-pics').on('click', function(event) {
       event.preventDefault()
       $(this).toggleClass('hidden')
-      $('li.all-pics-li').toggleClass('hidden')
+      $('li.all-pics').toggleClass('hidden')
       $('div.your-pictures').toggleClass('hidden')
       $('div.all-the-pictures').toggleClass('hidden')
     })
-
-
-
 
 /////////////////////////////
 })

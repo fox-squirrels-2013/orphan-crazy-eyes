@@ -12,18 +12,20 @@
             <% end %>
           </li>
 
-          <li class="nav-toggle-link all-pics-li">My Pictures</li>
-          <li class="nav-toggle-link my-pics-li hidden">Show All</li>
-
-          <li><%= link_to "Subscribe", new_subscription_path, :method => :get %></li>
-          <li>
             <% if current_user %>
-            <%= link_to "Logout", sessions_path, :method => :delete %>
+
+              <% if request.path != new_subscription_path %>
+                <li class="nav-toggle-link all-pics">My Pictures</li>
+                <li class="nav-toggle-link my-pics hidden">Show All</li>
+              <% end %>
+
+              <li class="subscribe-link"><%= link_to "Subscribe", new_subscription_path, :method => :get %></li>
+              <li><%= link_to "Logout", sessions_path, :method => :delete %></li>
+
             <% else %>
-            <%= link_to 'Connect to Instagram!', auth_instagram_path %>
+              <li><%= link_to "Connect to Instagram!", auth_instagram_path %></li>
             <% end %>
-          </li>
-          <!-- <li class="filter-button">Subscribe</li> -->
+
         </ul>
       </nav>
     </div>
