@@ -14,10 +14,7 @@
 
             <% if current_user %>
 
-              <% if request.path != new_subscription_path %>
-                <li class="nav-toggle-link all-pics">My Pictures</li>
-                <li class="nav-toggle-link my-pics hidden">Show All</li>
-              <% end %>
+
 
               <li class="subscribe-link"><%= link_to "Subscribe", new_subscription_path, :method => :get %></li>
               <li><%= link_to "Logout", sessions_path, :method => :delete %></li>
