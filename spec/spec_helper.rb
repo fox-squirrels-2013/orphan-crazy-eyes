@@ -1,10 +1,12 @@
 require 'simplecov'
+
 SimpleCov.start
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'capybara/rails'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -37,4 +39,24 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  # config.include IntegrationSpecHelper
+  Capybara.default_host = 'http://example.org'
+
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:instagram] = OmniAuth::AuthHash.new({
+    credentials: {
+      token: "cheeseburger"
+    },
+    info: {
+      nickname: "miya"
+    },
+    access_token: "fb2e77d.47a0479900504cb3ab4a1f626d174d2d",
+    user: {
+        id: "1574083",
+        username: "snoopdogg",
+        full_name: "Snoop Dogg",
+        profile_picture: "http://distillery.s3.amazonaws.com/profiles/profile_1574083_75sq_1295469061.jpg"
+    }
+  })
 end
