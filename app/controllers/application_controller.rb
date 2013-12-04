@@ -5,6 +5,9 @@ class ApplicationController < ActionController::Base
 
   def populate_image_db
       @all_tagged = client.tag_recent_media 'collect_a_matron'
+      # @instagram and it's dependencies should be removed.
+      # @instagram = @all_tagged.select { |photo| photo["user"]["username"] == current_user.username ]}
+      @instagram = client.user_recent_media(current_user.uid)
       @instagram_array = []
       @all_tagged.each do |tag|
         if Image.where(instagram_id: tag.id).exists?
