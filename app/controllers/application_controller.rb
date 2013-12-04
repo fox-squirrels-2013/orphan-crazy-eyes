@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   include Authentication
 
   def populate_image_db
+    debugger
       @all_tagged = client.tag_recent_media 'collect_a_matron'
       @instagram_array = []
       @all_tagged.each do |tag|
