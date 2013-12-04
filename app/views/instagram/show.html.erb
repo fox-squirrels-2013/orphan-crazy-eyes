@@ -1,14 +1,13 @@
-
 <div class="container">
 
   <div class="instagram-pictures container js-masonry all-the-pictures masonry item" id="container" data-masonry-options='{ "columnWidth": 102, "itemSelector": ".item" }'>
 
     <% @instagram_array.each do |tag| %>
-    <div class="item">
+      <div class="item">
 
       <%= image_tag tag.image_url, class: "instagram-draggable", id: tag.instagram_id %><br>
       <div>
-      <button disabled="<%= tag.votable?(current_user.id) %>" class="vote-button">vote</button >
+        <button disabled="<%= tag.votable?(current_user.id) %>" class="vote-button">vote</button >
         <span class="vote-count-style">votes = <span class="vote-count"><%= tag.vote_count %></span></span>
       </div>
       </div>
@@ -21,9 +20,13 @@
 
       <% @instagram.each do |instagram| %>
 
+
+
         <% if instagram.tags.grep(/collect_a_matron/) != [] %>
+
           <div class="item">
           <%= image_tag instagram.images.thumbnail.url, class: "instagram-draggable", id: instagram.id %><br>
+
         <% end %>
 
       </div>
@@ -31,7 +34,7 @@
 
     </div>
 
-  </div>
+</div>
 
 
 
