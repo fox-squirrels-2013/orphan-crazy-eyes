@@ -29,6 +29,8 @@ pdf.render_file 'test_646newcloudpdf.pdf'
 
 
 
+
+
 def self.generate(filename,options={},&block)
       pdf = new(options,&block)
       pdf.render_file(filename)
