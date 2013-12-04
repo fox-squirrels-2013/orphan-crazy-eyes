@@ -13,7 +13,7 @@ namespace :db do
       array_of_image_objects_not_to_print = []
 
       images.each do |row|
-        if row.vote_count < 3
+        if row.vote_count < 1
           array_of_image_objects_not_to_print << row
         end
       end
