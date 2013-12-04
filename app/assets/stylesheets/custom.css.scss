@@ -10,8 +10,6 @@ html {
   overflow-y: scroll;
 }
 
-
-
 body {
   padding-top: 60px;
   margin-left: 100px;
@@ -67,7 +65,7 @@ span.nickname {
   font-style: italic;
 }
 
-.filter-button {
+.nav-toggle-link {
   background-color: transparent;
   color: #999999;
   display: block;
@@ -134,6 +132,9 @@ footer {
   }
 }
 
+.hidden {
+  display: none;
+}
 
 .container {
   width: 100%;
