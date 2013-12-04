@@ -144,17 +144,22 @@ footer {
 
 
 .masonry .item {
-  width:  150px;
-  height: 175px;
+  width:  270px;
+  height: 300px;
   float: left;
   margin-bottom: 50px;
   background: #D26;
-  background-color: grey;
-  border-radius: 6px;
+  background-color: white;
+  border-radius: 0px;
   overflow: hidden;
 }
 
 
 .instagram-draggable {
+  width: 270px;
 }
 
+.vote-button {
+  margin-top: 5px;
+  width: 50%;
+}
