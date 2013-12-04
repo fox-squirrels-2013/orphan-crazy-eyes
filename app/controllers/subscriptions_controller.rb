@@ -16,4 +16,3 @@ class SubscriptionsController <ApplicationController
 end
 
 
-# @user.subscription_id => @subscription.id
