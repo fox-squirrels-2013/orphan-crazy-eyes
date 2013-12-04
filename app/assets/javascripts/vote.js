@@ -24,15 +24,24 @@ $(document).ready(function(){
   $('button[disabled=false]').attr('disabled', false)
 
 /////////////////////////////
+// ToDo: Since this hides 2 and un-hides 2 each time,
+// can this be refactored to use button and then style
+// button to blend in with the navbar
 
-    $('div.your-pictures').hide()
-    $('div.all-the-pictures').show()
-
-    $('li.filter-button').on('click', function(event) {
+    $('li.all-pics').on('click', function(event) {
       event.preventDefault()
-      // $('li.filter-button').text('all the pictures')
-      $('div.your-pictures').toggle()
-      $('div.all-the-pictures').toggle()
+      $(this).toggleClass('hidden')
+      $('li.my-pics').toggleClass('hidden')
+      $('div.your-pictures').toggleClass('hidden')
+      $('div.all-the-pictures').toggleClass('hidden')
+    })
+
+    $('li.my-pics').on('click', function(event) {
+      event.preventDefault()
+      $(this).toggleClass('hidden')
+      $('li.all-pics').toggleClass('hidden')
+      $('div.your-pictures').toggleClass('hidden')
+      $('div.all-the-pictures').toggleClass('hidden')
     })
 
 /////////////////////////////
