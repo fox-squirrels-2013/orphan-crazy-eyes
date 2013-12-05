@@ -3,7 +3,7 @@
 <div class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="nav-container">
-      <%= link_to "#collect_a_matron", root_path, id: "logo" %>
+      <%= link_to "#printstacard", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
           <li class="top-nav">
@@ -14,8 +14,6 @@
 
 
             <% if current_user %>
-
-
 
               <li class="subscribe-link"><%= link_to "Subscribe", new_subscription_path, :method => :get %></li>
               <li><%= link_to "Logout", sessions_path, :method => :delete %></li>
