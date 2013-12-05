@@ -8,7 +8,7 @@ class InstagramController <ApplicationController
   def show
     populate_image_db
     @instagram = client.user_recent_media(current_user.uid)
-    @all_tagged = client.tag_recent_media 'collect_a_matron'
+    @all_tagged = client.tag_recent_media 'printstacard'
   end
 
 end
