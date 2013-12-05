@@ -1,21 +1,25 @@
 require 'spec_helper'
 
-
 describe UsersController do
-
-  before (:each) do
-    controller.stub!(:redirect_to_instagram).and_return(true)
-  end
+  let(:user) { User.create(uid: 1, access_token: "123", nickname: "miya") }
 
   describe "user creation page" do
-    xit "#create" do
-      post :create, user:{uid: 1, access_token: "123", nickname: "miya"}
-      response.status.should eq 200
+
+    before (:each) do
+      # stub_current_user user
+      # stub_user user
     end
 
-    xit "#create" do
+    it "#create" do
+      controller.stub(:auth_hash) { auth_hash }
+      post :create
+      expect(response).to be_redirect
+    end
+
+    it "#create" do
+      controller.stub(:auth_hash) { auth_hash }
       expect {
-        post :create, user: { uid: 1, access_token: "123", nickname: "miya"}
+        post :create
       }.to change { User.count }.by(1)
     end
 
