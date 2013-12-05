@@ -1,4 +1,4 @@
-##Prints-ta-card
+##printstacard
 
 #Application which allows users to subscribe and get
 their best instragram pictures in the mail every month.
