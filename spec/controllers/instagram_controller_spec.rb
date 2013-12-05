@@ -18,7 +18,7 @@ describe InstagramController do
         controller.should_receive(:populate_image_db) {}
         get :show, :id => user.id
         expect(assigns(:instagram)).to eq controller.client.user_recent_media(user.uid)
-        expect(assigns(:all_tagged)).to eq controller.client.tag_recent_media 'collect_a_matron'
+        expect(assigns(:all_tagged)).to eq controller.client.tag_recent_media 'printstagram'
       end
 
     end

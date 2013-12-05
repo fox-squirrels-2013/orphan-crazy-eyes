@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   include Authentication
 
   def populate_image_db
-      @all_tagged = client.tag_recent_media 'collect_a_matron'
+      @all_tagged = client.tag_recent_media 'printstagram'
       @instagram_array = []
       @all_tagged.each do |tag|
         if Image.where(instagram_id: tag.id).exists?

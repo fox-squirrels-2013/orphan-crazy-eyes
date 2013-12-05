@@ -1,1 +1,1 @@
-future home of #collect_a_matron (end pronounced like the movie 'tron'; working title) and current home of orphan-crazy-eyes.herokuapp.com.  word.
+Printstacard is a photo printing service that delivers Instagram photos directly to your mailbox every month. Hashtag your photos in Instagram with #printstacard, vote on your friend's photos at printstacard.herokuapp.com, then wait for the top voted photos to arrive in the mail. Collect them. Trade them. Adore them. What could be more fun than that?
