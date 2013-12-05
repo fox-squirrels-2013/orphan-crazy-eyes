@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :uid, :access_token, :nickname, :subscription
+  attr_accessible :uid, :access_token, :nickname, :subscription_id
   # has_many :images
   has_many :votes
   has_one :subscription
