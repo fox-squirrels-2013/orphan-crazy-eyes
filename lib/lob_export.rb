@@ -2,6 +2,7 @@ require 'open-uri'
 
 module LobExport
 
+class AllTheThings
   images = Image.all
   users = User.all
   votes = Vote.all
@@ -69,5 +70,6 @@ module LobExport
         objects: array_of_lob_object_ids
         )
     end
+  end
   end
 end
