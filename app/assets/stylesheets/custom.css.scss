@@ -1,5 +1,7 @@
 @import "bootstrap";
 
+
+
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
@@ -8,12 +10,15 @@ $grayMediumLight: #eaeaea;
 
 html {
   overflow-y: scroll;
+
 }
 
 body {
+  font-family: 'Varela Round', sans-serif;
   padding-top: 60px;
   margin-left: 100px;
   margin-right: 100px;
+  background-color: rgba(100,100,100,.2)
 }
 
 section {
@@ -77,12 +82,14 @@ span.nickname {
 }
 
 .top-nav {
+  text-transform: lowercase;
   background-color: transparent;
-  color: #999999;
+  color: rgba(255,100,72,1);
   display: block;
   padding: 10px 15px 10px;
 
 }
+
 
 .navbar-inverse li > a:hover {
   background-color: transparent;
@@ -94,8 +101,7 @@ span.nickname {
   margin-right: 10px;
   font-size: 1.7em;
   color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
+  letter-spacing: 1px;
   padding-top: 9px;
   padding-left: 9px;
   font-weight: bold;
@@ -132,6 +138,8 @@ footer {
   }
 }
 
+/* body */
+
 .hidden {
   display: none;
 }
@@ -144,17 +152,41 @@ footer {
 
 
 .masonry .item {
-  width:  150px;
-  height: 175px;
+  width:  195px;
+  height: 225px;
   float: left;
   margin-bottom: 50px;
   background: #D26;
-  background-color: grey;
-  border-radius: 6px;
+  background-color: rgba(80,80,80,1);
+  border-radius: 0px;
   overflow: hidden;
 }
 
 
 .instagram-draggable {
+  margin-bottom: 3px;
 }
 
+
+/* picture vote bar */
+
+.vote-count {
+  margin-left: 130px;
+  margin-top: 10px;
+  margin-bottom: -10px;
+  color: rgba(200,200,200,1);
+}
+
+.vote-button {
+  margin-top: -1px;
+  margin-left: 5px;
+  background: rgba(0,0,0,0);
+  border: none;
+}
+
+.navbar-inner {
+  background-color: rgba(80,80,80,1) !important;
+}
+
+
+/*      color: rgba(100,4,200,1); */

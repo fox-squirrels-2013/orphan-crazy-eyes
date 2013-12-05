@@ -1,14 +1,8 @@
 require 'spec_helper'
 
 describe UsersController do
-  let(:user) { User.create(uid: 1, access_token: "123", nickname: "miya") }
 
   describe "user creation page" do
-
-    before (:each) do
-      # stub_current_user user
-      # stub_user user
-    end
 
     it "#create" do
       controller.stub(:auth_hash) { auth_hash }
