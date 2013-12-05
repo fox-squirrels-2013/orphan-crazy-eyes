@@ -2,6 +2,8 @@ class UsersController <ApplicationController
   before_filter :redirect_to_instagram, :only => [:create]
 
   def create
+    p "*"*300
+    p auth_hash
     user = User.find_or_create_by_auth auth_hash
     if user.present?
       login user

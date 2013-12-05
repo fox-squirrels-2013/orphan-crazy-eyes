@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'spec_helper'
+
 describe InstagramController do
   let(:user) { User.create(uid: 1, access_token: "123", nickname: "miya") }
 
