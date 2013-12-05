@@ -1,7 +1,5 @@
 @import "bootstrap";
 
-/* font-family: VAGRounded-Bold;
-font-family: "VAGRounded-Light", Sans-Serif; */
 
 
 /* mixins, variables, etc. */
@@ -20,6 +18,7 @@ body {
   padding-top: 60px;
   margin-left: 100px;
   margin-right: 100px;
+  background-color: rgba(100,100,100,.2)
 }
 
 section {
@@ -165,15 +164,25 @@ footer {
 
 
 .instagram-draggable {
+  margin-bottom: 3px;
 }
 
 
 /* picture vote bar */
 
 .vote-count {
-  margin-left: 100px;
+  margin-left: 130px;
+  margin-top: 10px;
+  margin-bottom: -10px;
 }
 
 .vote-button {
-  margin-left: 25px;
+  margin-top: -1px;
+  margin-left: 5px;
+  background: rgba(0,0,0,0);
+  border: none;
+  outline: none;
 }
+
+
+/*      color: rgba(100,4,200,1); */

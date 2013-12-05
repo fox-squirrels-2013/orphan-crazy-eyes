@@ -7,8 +7,9 @@
     <div class="item">
 
       <%= image_tag tag.image_url, class: "instagram-draggable", id: tag.instagram_id %><br>
-      <button disabled="<%= tag.votable?(current_user.id) %>" class="vote-button">vote</button>
-        <span><span class="vote-count"><%= tag.vote_count %></span></span>
+      <button disabled="<%= tag.votable?(current_user.id) %>" class="vote-button"><%= image_tag "/medium_orange_heart.png", size: "20x20", class: "heart"  %></button>
+        <span>
+          <span class="vote-count"><%= tag.vote_count %></span></span>
 
       </div>
       <% end %>
