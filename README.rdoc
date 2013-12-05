@@ -1,1 +1,10 @@
-future home of #collect_a_matron (end pronounced like the movie 'tron'; working title) and current home of orphan-crazy-eyes.herokuapp.com.  word.
+##Prints-ta-card
+
+#Application which allows users to subscribe and get
+their best instragram pictures in the mail every month.
+
+#A bit like trading cards, it sends them high quality professionally printed photos.
+
+#Includes a rake task which determines users' most favorited pictures and places the print order at
+Lob.
+
