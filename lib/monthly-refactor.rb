@@ -1,7 +1,4 @@
-
-
-
-
+# just a sandbox here
 
 users_pics.each do |image_object|
   Prawn::Document.generate('new_test.pdf', skip_page_creation: true, :page_size => [288, 432]) do
@@ -14,6 +11,4 @@ users_pics.each do |image_object|
   image_object.update_attributes(pdf_image_url: cloudpdf["url"])
   pdf_image_urls << image_object.pdf_image_url
 end
-
-
 

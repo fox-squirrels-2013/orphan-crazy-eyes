@@ -28,11 +28,11 @@ module LobExport
       users_pics = pics_user_voted_for - dont_print
       pdf_image_urls = []
       users_pics.each do |image_object|
-        Prawn::Document.generate('new_test.pdf', skip_page_creation: true, :page_size => [288, 432]) do
+        Prawn::Document.generate('#{image_object.instagram_id}.pdf', skip_page_creation: true, :page_size => [288, 432]) do
           start_new_page
           image open(image_object.image_url), :fit => [220,220]
         end
-        newpdf = File.open('new_test.pdf')
+        newpdf = File.open('#{image_object.instagram_id}.pdf')
         cloudpdf = Cloudinary::Uploader.upload(newpdf)
         image_object.update_attributes(pdf_image_url: cloudpdf["url"])
         pdf_image_urls << image_object.pdf_image_url
