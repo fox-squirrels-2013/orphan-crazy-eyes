@@ -21,7 +21,7 @@ module Lob
     @lob.objects.create(
       name: image.instagram_id,
       file: image.image_url,
-      setting_id: "500"
+      setting_id: "500" # 4x6 color Gloss Photo
     )
   end
 
@@ -47,26 +47,3 @@ module Lob
 
 end
 
-          # https://www.lob.com/docs
-# {
-#     "id": "100",
-#     "type": "Document",
-#     "description": "Black and White Document",
-#     "paper": "24lb Paper Standard",
-#     "width": "8.500",
-#     "length": "11.000",
-#     "color": "Black and White",
-#     "notes": "Includes max of 4 pages",
-#     "object": "setting"
-# }
-
-          # {
-          #   "id": "500",
-          #   "description": "4x6 Gloss Photo",
-          #   "paper": "Gloss Photo Paper",
-          #   "width": "4.000",
-          #   "length": "6.000",
-          #   "color": "Color",
-          #   "notes": null,
-          #   "object": "setting"
-          # }

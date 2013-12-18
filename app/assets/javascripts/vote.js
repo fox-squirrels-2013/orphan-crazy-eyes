@@ -2,11 +2,9 @@ $(document).ready(function(){
 /////////////////////////////
 
 $('button.vote-button').on('click', function(event) {
-  // debugger
   event.preventDefault()
   var $thisButton = $(this)
-  // var $heart = $(this).children()
-  // var $heart2 = $(this).children()
+  var $heart = $(this).children()
   var id = $(this).siblings().attr('id')
   var imgSrc = $(this).siblings().attr('src')
   var $votes = $(this).siblings().children()
@@ -19,14 +17,14 @@ $('button.vote-button').on('click', function(event) {
   .done(function(data){
     $votes.text($newVoteCount)
     $thisButton.attr('disabled', true)
-    // $heart.remove()
-    // $heart2.append('<img alt=​"Medium_orange_heart" class=​"heart" height=​"20" src=​"/​light_grey_heart.png" width=​"20">​')
+    $heart.attr('src', '/light_grey_heart.png')
   })
 })
 
 /////////////////////////////
 
 $('button[disabled=false]').attr('disabled', false)
+$('button.vote-button[disabled=true]').children().attr('src', '/light_grey_heart.png')
 
 /////////////////////////////
 // ToDo: Since this hides 2 and un-hides 2 each time,

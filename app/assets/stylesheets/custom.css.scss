@@ -182,7 +182,15 @@ footer {
   margin-left: 5px;
   background: rgba(0,0,0,0);
   border: none;
+  &:focus {
+    outline: none;
+  }
 }
+
+button[disabled=false] {
+
+}
+
 
 .navbar-inner {
   background-color: rgba(80,80,80,1) !important;
