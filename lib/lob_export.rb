@@ -9,9 +9,9 @@ module LobExport
 
   dont_print = []
 
-  images.each do |row|
-    if row.vote_count < 1
-      dont_print << row
+  images.each do |image|
+    if image.vote_count < 2
+      dont_print << image
     end
   end
 
@@ -23,7 +23,7 @@ module LobExport
       users_votes = Vote.where(user_id: num)
       users_votes.each do |vote|
         img_id = vote.image_id
-        pics_user_voted_for << Image.where(id: img_id).first
+        pics_user_voted_for << Image.find(img_id)
       end
       users_pics = pics_user_voted_for - dont_print
       pdf_image_urls = []
@@ -59,12 +59,12 @@ module LobExport
           )
       end
 
-      array_of_lob_object_ids = lob_objects.map { |obj| obj["id"] }
+      lob_object_ids = lob_objects.map { |obj| obj["id"] }
 
       @lob.jobs.create(
         name: "#{num}" + Date.new.to_s,
         to: @lob_address["id"],
-        objects: array_of_lob_object_ids
+        objects: lob_object_ids
         )
     end
   end
