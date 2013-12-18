@@ -7,11 +7,11 @@ module LobExport
   votes = Vote.all
   total_users = users.length
 
-  array_of_image_objects_not_to_print = []
+  dont_print = []
 
   images.each do |row|
     if row.vote_count < 1
-      array_of_image_objects_not_to_print << row
+      dont_print << row
     end
   end
 
@@ -19,15 +19,15 @@ module LobExport
     num += 1
     user = User.find(num)
     if user.subscription_id != nil
-      array_of_image_objects_user_wants_to_print = []
+      pics_user_voted_for = []
       users_votes = Vote.where(user_id: num)
       users_votes.each do |vote|
         img_id = vote.image_id
-        array_of_image_objects_user_wants_to_print << Image.where(id: img_id).first
+        pics_user_voted_for << Image.where(id: img_id).first
       end
-      image_objects_per_user = array_of_image_objects_user_wants_to_print - array_of_image_objects_not_to_print
+      users_pics = pics_user_voted_for - dont_print
       pdf_image_urls = []
-      image_objects_per_user.each do |image_object|
+      users_pics.each do |image_object|
         Prawn::Document.generate('#{image_object.instagram_id}.pdf', skip_page_creation: true, :page_size => [288, 432]) do |pdf|
           pdf.transparent(1) do
             pdf.start_new_page(:background_color => "234575")
@@ -53,7 +53,7 @@ module LobExport
         zip: subscription.zip
         )
 
-      lob_objects = image_objects_per_user.map do |image_object|
+      lob_objects = users_pics.map do |image_object|
         @lob.objects.create(
           name: image_object.instagram_id,
           file: image_object.pdf_image_url,
