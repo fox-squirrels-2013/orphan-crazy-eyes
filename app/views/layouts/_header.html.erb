@@ -19,7 +19,7 @@
               <li><%= link_to "Logout", sessions_path, :id => "logout", :method => :delete %></li>
 
             <% else %>
-              <li><%= link_to "Connect to Instagram!", auth_instagram_path %></li>
+              <li><%= link_to "Connect to Instagram!", auth_instagram_path, :id => "connect" %></li>
             <% end %>
 
         </ul>
