@@ -211,11 +211,29 @@ body {
     margin-left: 61px;
     margin-right: 61px;
   }
+
   .vote-count {
+    margin-left: 130px;
+    padding-top: 16px;
+    margin-top: 16px;
+    padding-bottom: 0;
+    margin-bottom: -30;
+    font-size: 1.5em;
+  }
+  .instagram-draggable {
+    margin-bottom: 6px;
+  }
+  .vote-button {
+    margin-top: -8px;
+  }
+  /*.vote-count {
     margin-left: 110px;
     margin-top: 6px;
     padding-top: 6px;
     font-size: 1.5em;
+  }*/
+  .instagram-draggable {
+    margin-bottom: 20px;
   }
   .masonry .item {
     width:  260px;
@@ -248,9 +266,6 @@ body {
   }
   a#logout {
     padding-left: 63px;
-  }
-  .vote-count {
-    font-size: 1.2em;
   }
 }
 
