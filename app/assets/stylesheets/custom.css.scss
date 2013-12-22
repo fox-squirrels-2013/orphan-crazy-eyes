@@ -81,6 +81,10 @@ span.nickname {
   }
 }
 
+nav {
+  height: 40px;
+}
+
 .top-nav {
   text-transform: lowercase;
   background-color: transparent;
@@ -194,6 +198,15 @@ button[disabled=false] {
 
 .navbar-inner {
   background-color: rgba(80,80,80,1) !important;
+}
+
+
+@media screen and (max-width: 400px){
+  div.navbar {
+    background-color: blue;
+    position: relative;
+
+  }
 }
 
 
