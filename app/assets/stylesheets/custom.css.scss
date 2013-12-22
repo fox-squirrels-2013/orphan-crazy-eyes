@@ -1,13 +1,11 @@
 @import "bootstrap";
 
 
-
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
 
 /* universal */
-
 html {
   overflow-y: scroll;
 
@@ -37,7 +35,6 @@ textarea {
 }
 
 /* typography */
-
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
@@ -63,9 +60,7 @@ p {
   line-height: 1.7em;
 }
 
-
 /* header */
-
 span.nickname {
   font-style: italic;
 }
@@ -94,7 +89,6 @@ nav {
 
 }
 
-
 .navbar-inverse li > a:hover {
   background-color: transparent;
   color: white;
@@ -117,7 +111,6 @@ nav {
 }
 
 /* footer */
-
 footer {
   margin-top: 45px;
   padding-top: 5px;
@@ -143,7 +136,6 @@ footer {
 }
 
 /* body */
-
 .hidden {
   display: none;
 }
@@ -153,9 +145,6 @@ footer {
   margin-bottom: 20px;
   margin-top: 15px;
 }
-
-
-
 
 .masonry .item {
   width:  195px;
@@ -168,14 +157,11 @@ footer {
   overflow: hidden;
 }
 
-
 .instagram-draggable {
   margin-bottom: 3px;
 }
 
-
 /* picture vote bar */
-
 .vote-count {
   margin-left: 130px;
   margin-top: 10px;
@@ -200,15 +186,10 @@ footer {
 div.navbar {
     background-color: blue;
     position: relative;
+}
 
-
-  }
-
-  body {
-    padding: 0;
-  }
-
-div.container {
+body {
+  padding: 0;
 }
 
 @media screen and (max-width: 480px){
@@ -219,11 +200,7 @@ div.container {
     margin-left: 61px;
     margin-right: 61px;
   }
-  .vote-count {
-    margin-left: 50px;
-  }
 }
-
 
 @media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2){
   div.navbar {
@@ -238,8 +215,6 @@ div.container {
     margin-top: 6px;
     padding-top: 6px;
   }
-
-
 }
 
 
