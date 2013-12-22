@@ -211,12 +211,20 @@ div.navbar {
 div.container {
 }
 
-
-
 @media screen and (max-width: 400px){
   div.navbar {
     background-color: blue;
+  }
+  body {
+    margin-left: 61px;
+    margin-right: 61px;
+  }
+}
 
+
+@media screen and (max-device-width: 400px){
+  div.navbar {
+    background-color: blue;
   }
   body {
     margin-left: 61px;
