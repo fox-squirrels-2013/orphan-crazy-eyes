@@ -218,7 +218,9 @@ div.container {
   body {
     margin-left: 61px;
     margin-right: 61px;
-    background-color: black;
+  }
+  .container{
+    width: 195px;
   }
 }
 
@@ -230,7 +232,10 @@ div.container {
   body {
     margin-left: 61px;
     margin-right: 61px;
-    background-color: black;
+    background-color: red;
+  }
+  .container{
+    width: 195px;
   }
 }
 
