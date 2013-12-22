@@ -219,6 +219,10 @@ div.container {
     margin-left: 61px;
     margin-right: 61px;
   }
+  .vote-count {
+    margin-bottom: 0px;
+    z-index: 10;
+  }
 }
 
 
@@ -232,6 +236,7 @@ div.container {
   }
   .vote-count {
     margin-bottom: 0px;
+    margin-top: -10px;
   }
 
 
