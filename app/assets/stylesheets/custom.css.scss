@@ -211,13 +211,14 @@ div.navbar {
 div.container {
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 480px){
   div.navbar {
     background-color: blue;
   }
   body {
     margin-left: 61px;
     margin-right: 61px;
+    background-color: black;
   }
 }
 
@@ -229,6 +230,7 @@ div.container {
   body {
     margin-left: 61px;
     margin-right: 61px;
+    background-color: black;
   }
 }
 
