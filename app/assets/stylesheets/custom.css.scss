@@ -1,13 +1,11 @@
 @import "bootstrap";
 
 
-
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
 
 /* universal */
-
 html {
   overflow-y: scroll;
 
@@ -37,7 +35,6 @@ textarea {
 }
 
 /* typography */
-
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
@@ -63,9 +60,7 @@ p {
   line-height: 1.7em;
 }
 
-
 /* header */
-
 span.nickname {
   font-style: italic;
 }
@@ -81,6 +76,10 @@ span.nickname {
   }
 }
 
+nav {
+  height: 40px;
+}
+
 .top-nav {
   text-transform: lowercase;
   background-color: transparent;
@@ -89,7 +88,6 @@ span.nickname {
   padding: 10px 15px 10px;
 
 }
-
 
 .navbar-inverse li > a:hover {
   background-color: transparent;
@@ -113,7 +111,6 @@ span.nickname {
 }
 
 /* footer */
-
 footer {
   margin-top: 45px;
   padding-top: 5px;
@@ -139,7 +136,6 @@ footer {
 }
 
 /* body */
-
 .hidden {
   display: none;
 }
@@ -149,7 +145,6 @@ footer {
   margin-bottom: 20px;
   margin-top: 15px;
 }
-
 
 .masonry .item {
   width:  195px;
@@ -162,14 +157,11 @@ footer {
   overflow: hidden;
 }
 
-
 .instagram-draggable {
   margin-bottom: 3px;
 }
 
-
 /* picture vote bar */
-
 .vote-count {
   margin-left: 130px;
   margin-top: 10px;
@@ -182,10 +174,47 @@ footer {
   margin-left: 5px;
   background: rgba(0,0,0,0);
   border: none;
+  &:focus {
+    outline: none;
+  }
 }
 
 .navbar-inner {
   background-color: rgba(80,80,80,1) !important;
+}
+
+div.navbar {
+    background-color: blue;
+    position: relative;
+}
+
+body {
+  padding: 0;
+}
+
+@media screen and (max-width: 480px){
+  div.navbar {
+    background-color: blue;
+  }
+  body {
+    margin-left: 61px;
+    margin-right: 61px;
+  }
+}
+
+@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2){
+  div.navbar {
+    background-color: blue;
+  }
+  body {
+    margin-left: 61px;
+    margin-right: 61px;
+  }
+  .vote-count {
+    margin-left: 110px;
+    margin-top: 6px;
+    padding-top: 6px;
+  }
 }
 
 

@@ -16,7 +16,7 @@ module AuthHelper
 end
 
 
-# #<OmniAuth::AuthHash
+# #<OmniAuth::auth_hash
 #   credentials=#<OmniAuth::AuthHash
 #     expires=false
 #     token="273616543.42e865a.a548ab315dff48ec857a06f7492d3cbe">
