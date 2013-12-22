@@ -200,6 +200,9 @@ body {
     margin-left: 61px;
     margin-right: 61px;
   }
+  .vote-count {
+    font-size: 1.3em;
+  }
 
 }
 
@@ -213,13 +216,12 @@ body {
   }
 
   .vote-count {
-    margin-left: 150px;
+    margin-left: 170px;
     padding-top: 5px;
     margin-top: 16px;
     padding-bottom: 0;
     margin-bottom: -30;
     font-size: 1.5em;
-    color: red;
   }
   .vote-button {
     margin-top: -10px;
