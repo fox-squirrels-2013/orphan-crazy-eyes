@@ -200,10 +200,6 @@ body {
     margin-left: 61px;
     margin-right: 61px;
   }
-  .vote-count {
-    font-size: 1.3em;
-  }
-
 }
 
 @media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2){
@@ -214,7 +210,6 @@ body {
     margin-left: 61px;
     margin-right: 61px;
   }
-
   .vote-count {
     margin-left: 170px;
     padding-top: 5px;
@@ -226,7 +221,6 @@ body {
   .vote-button {
     margin-top: -10px;
   }
-
   .instagram-draggable {
     margin-bottom: 10px;
   }
