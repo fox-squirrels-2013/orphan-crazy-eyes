@@ -3,6 +3,7 @@ $(document).ready(function(){
 
 $('button.vote-button').on('click', function(event) {
   event.preventDefault()
+    debugger
   var $thisButton = $(this)
   var $heart = $(this).children()
   var id = $(this).siblings().attr('id')
@@ -16,18 +17,16 @@ $('button.vote-button').on('click', function(event) {
     data: {instagram_id: id, image_url: imgSrc}
   })
   .done(function(data){
-    debugger
     $votes.text($newVoteCount)
     $thisButton.attr('disabled', true)
-    // $heart.attr('src', '/light_grey_heart.png')
-    $heart.attr('background', 'rgba(80,80,80,1)')
+    $heart.css('background', 'rgba(195,195,195,1)')
   })
 })
 
 /////////////////////////////
 
 $('button[disabled=false]').attr('disabled', false)
-$('button.vote-button[disabled=true]').children().attr('src', '/light_grey_heart.png')
+$('button.vote-button[disabled=true]').children().css('background', 'rgba(195,195,195,1)')
 
 /////////////////////////////
 // ToDo: Since this hides 2 and un-hides 2 each time,
