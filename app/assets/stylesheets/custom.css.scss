@@ -152,7 +152,7 @@ footer {
   float: left;
   margin-bottom: 50px;
   background: #D26;
-  background-color: rgba(80,80,80,1);
+  background-color: rgba(0,0,0,1);
   border-radius: 0px;
   overflow: hidden;
 }
@@ -177,6 +177,45 @@ footer {
   &:focus {
     outline: none;
   }
+}
+
+#heart {
+  position: relative;
+  margin-top: -7px;
+  background-color: rgba(255,100,72,1);
+}
+#heart:before, #heart:after {
+  position: absolute;
+  content: "";
+  left: 12px; top: 0;
+  width: 12px;
+  height: 20px;
+  background: rgba(255,100,72,1);
+  -moz-border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+}
+#heart:after {
+  left: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin :100% 100%;
 }
 
 .navbar-inner {

@@ -8,16 +8,19 @@ $('button.vote-button').on('click', function(event) {
   var id = $(this).siblings().attr('id')
   var imgSrc = $(this).siblings().attr('src')
   var $votes = $(this).siblings().children()
-  var $newVoteCount = Number($votes.text())+1
+  var $currentVoteCount = Number($votes.text())
+  var $newVoteCount = $currentVoteCount+1
   $.ajax({
     url: '/votes',
     type: 'post',
     data: {instagram_id: id, image_url: imgSrc}
   })
   .done(function(data){
+    debugger
     $votes.text($newVoteCount)
     $thisButton.attr('disabled', true)
-    $heart.attr('src', '/light_grey_heart.png')
+    // $heart.attr('src', '/light_grey_heart.png')
+    $heart.attr('background', 'rgba(80,80,80,1)')
   })
 })
 
