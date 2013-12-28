@@ -8,7 +8,8 @@ $('button.vote-button').on('click', function(event) {
   var id = $(this).siblings().attr('id')
   var imgSrc = $(this).siblings().attr('src')
   var $votes = $(this).siblings().children()
-  var $newVoteCount = Number($votes.text())+1
+  var $currentVoteCount = Number($votes.text())
+  var $newVoteCount = $currentVoteCount+1
   $.ajax({
     url: '/votes',
     type: 'post',
@@ -17,19 +18,17 @@ $('button.vote-button').on('click', function(event) {
   .done(function(data){
     $votes.text($newVoteCount)
     $thisButton.attr('disabled', true)
-    $heart.attr('src', '/light_grey_heart.png')
+    $heart.css('background', 'rgba(195,195,195,1)')
   })
 })
 
 /////////////////////////////
 
 $('button[disabled=false]').attr('disabled', false)
-$('button.vote-button[disabled=true]').children().attr('src', '/light_grey_heart.png')
+$('button.vote-button[disabled=true]').children().css('background', 'rgba(195,195,195,1)')
 
 /////////////////////////////
-// ToDo: Since this hides 2 and un-hides 2 each time,
-// can this be refactored to use button and then style
-// button to blend in with the navbar
+// toggle not presently a feature
 
 $('li.all-pics').on('click', function(event) {
   event.preventDefault()
