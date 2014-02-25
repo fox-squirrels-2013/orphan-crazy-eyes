@@ -3,19 +3,28 @@ class ApplicationController < ActionController::Base
   include InstagramOauth
   include Authentication
 
+  def pagination page
+    page =
+  end
+
   def populate_image_db
-      @all_tagged = client.tag_recent_media 'printstacard'
-      @instagram_array = []
-      @all_tagged.each do |tag|
-        if Image.where(instagram_id: tag.id).exists?
-          @image = Image.where(instagram_id: tag.id).first
-          @instagram_array << @image
-        else
-          @image = Image.create :instagram_id => tag.id,
+    @next = client.tag_recent_media('printstacard').pagination["next_max_tag_id"]
+    @instagram = client.user_recent_media(current_user.uid, {max_id: @next} )
+    @all_tagged = client.tag_recent_media 'printstacard'
+    pagination
+
+
+    @instagram_array = []
+    @all_tagged.each do |tag|
+      if Image.where(instagram_id: tag.id).exists?
+        @image = Image.where(instagram_id: tag.id).first
+        @instagram_array << @image
+      else
+        @image = Image.create :instagram_id => tag.id,
                                 :image_url => tag.images.standard_resolution.url
-          @instagram_array << @image
-        end
+        @instagram_array << @image
       end
+    end
   end
 
   def vote!
