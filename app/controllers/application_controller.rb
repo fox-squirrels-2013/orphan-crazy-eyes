@@ -4,15 +4,28 @@ class ApplicationController < ActionController::Base
   include Authentication
 
   def pagination page
-    page =
+    all_tagged ||= []
+    all_tagged << page
+    max = page.pagination["next_max_tag_id"]
+    unless max.nil?
+      twenty_pix = client.tag_recent_media('printstacard', {max_id: max})
+      all_tagged << twenty_pix
+      pagination twenty_pix
+    end
+    # p "all_tagged_____"
+    # p all_tagged
+    #   unless all_tagged.nil?
+    #     all_tagged[0].each do |x|
+    #       p x.id
+    #     end
+    #   end
+    all_tagged
   end
 
   def populate_image_db
-    @next = client.tag_recent_media('printstacard').pagination["next_max_tag_id"]
-    @instagram = client.user_recent_media(current_user.uid, {max_id: @next} )
-    @all_tagged = client.tag_recent_media 'printstacard'
-    pagination
-
+    # @old = client.tag_recent_media 'printstacard'
+    all = pagination client.tag_recent_media('printstacard')
+    @all_tagged = all[0]
 
     @instagram_array = []
     @all_tagged.each do |tag|
@@ -25,6 +38,7 @@ class ApplicationController < ActionController::Base
         @instagram_array << @image
       end
     end
+    @instagram_array
   end
 
   def vote!
