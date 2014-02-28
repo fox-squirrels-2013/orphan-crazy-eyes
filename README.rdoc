@@ -1,10 +1,14 @@
-##printstacard
+printstacard.herokuapp.com
+==========
 
-#Application which allows users to subscribe and get
-their best instragram pictures in the mail every month.
+hypothetically:
+#printstacard is a photo printing service that delivers Instagram photos directly to your mailbox every month. Hashtag your photos in Instagram with #printstacard, vote on your friend's photos, and then wait for the top voted photos to arrive in the mail. Collect them. Trade them. Adore them. What could be more fun than that?
 
-#A bit like trading cards, it sends them high quality professionally printed photos.
-
-#Includes a rake task which determines users' most favorited pictures and places the print order at
-Lob.
+for realsies:
+this is an awesome structure for the above purpose.  tagging and voting works, but printing is still in the works (mostly due to pesky billing/money/blah ;)  some seriously cool stuff though-
+checkout the mob behind the code:
+MiyaPapaya
+MarionKnight
+bbeaird
+vipyne
 
